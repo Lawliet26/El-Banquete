@@ -4,8 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Banquete - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo-removebg-preview.png">
+    <script src="https://kit.fontawesome.com/eed779b4d1.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="body-contacto">
+    <header class="cabecera">
+        <div class="container">
+            <a href="index.html" class="link-logo">
+                <img class="logo" src="img/logo3.svg" width="150" height="152">
+            </a>
+        <nav class="menu">
+            <a href="index.html#lacarta">La Carta</a>
+            <a href="index.html#locales">Locales</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html" class="seleccionado" target="_self">Contacto</a>
+        </nav>
+        <a href="#hamb" class="hamb" ><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </header>
+    <main>
+        <section id="banner" class="banner-contacto">
+            <img class="banner-home" src="img/contacto.jpg" width="7952" height="5304">
+            <div class="container">
+                <div class="fila fila-centrada">
+                    <div class="columna columna-50 columna-mb-100">
+                        <h1 class="centrar-texto nosotros">Contactanos</h1>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="flecha "><i class="fa-solid fa-angles-down"></i></a>
+        </section>
+        <section id="contacto" class="seccion">
+            <div class="container">
+                <div class="fila">  
+                    <div class="columna columna-50 columna-mb-100 derecha-texto columna-info-contacto orden">
+                        <p>Nos ubicamos el frente del parque de Alamaos cerca a la universidad Tecnologica de Pereira, date la
+                            oportunidad de deleitar tu paldar con los mejores platos de la region aqui en El Banquete.
+                        </p>
+                        <h2>Cl. 13 #26-07, Pereira, Risaralda</h2>
+                        <a href="tel:+573052100619" class="telefono">+57 3052100619</a>
+                        <a href="mailto:itachiuchiha26122001@gmail.com" class="telefono">itachiuchiha26122001@gmail.com</a>
+                    </div>
+                    <div class="columna columna-50 columna-mb-100 columna-form">
+                        <form id="frmcontacto" action="registro.php" method="post">
+                            <div class="form-bloques">
+                                <input class="form-input" type="text" placeholder="Nombre" name="nombre" required>
+                            </div>
+                            <div class="form-bloques">
+                                <input class="form-input" type="email" placeholder="Email" name="email" required>
+                            </div>
+                            <div class="form-bloques">
+                                <input class="form-input" type="text" placeholder="Asunto" name="asunto" required>
+                            </div>
+                            <div class="form-bloques">
+                                <textarea class="form-input" placeholder="Mensaje" name="mensaje"  required></textarea>
+                            </div>
+                            <div class="form-bloques form-bloque-boton">
+                                <input type="submit" value="ENVIAR" class="btn boton-rojo">
+                            </div>
+                        </form>
+                    </div>               
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="pie nosotros">
+            <div class="container">
+                <div class="fila">
+                    <div class="columna columna-33 columna-mb-100 order-mb-3">
+                        &reg; Derechos reservados 2024
+                    </div>
+                    <div class="columna columna-33 order-mb-2">
+                    </div>
+                    <div class="columna columna-33 empujar-33 columna-mb-100   
+                    empujar-mb-0 lista-redes order-mb-1">
+                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

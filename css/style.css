@@ -110,6 +110,7 @@ footer .pie.nosotros{
 
 /*------------------------- CLASES -----------------------------*/
 
+.body-contacto,
 .body-nosotros{
   background-image: url("../img/tramap.png");
   background-repeat: repeat; /*Para que la imagen de fondo se repita*/
@@ -380,6 +381,7 @@ matrix(): Define una transformación 2D personalizada utilizando una matriz de 6
   transition: all 0.3s ease; /*Para que el cambio de color sea suave*/
 }
 
+.cabecera .menu .seleccionado,
 .cabecera .menu a:hover{
   color: #f0ca02;
 }
@@ -464,7 +466,6 @@ matrix(): Define una transformación 2D personalizada utilizando una matriz de 6
   }
 
 }
-
 
 
 /*
@@ -640,6 +641,59 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
   margin-top: 0;
 }
 
+/*----------------------------------CONTACTO---------------------------------*/
+
+.form-bloques{
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-bloques .form-input{
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  background-attachment: fixed;
+  border-radius: 1rem;
+  box-shadow: inset -0.53rem -0.53rem 0.53rem #f5f5f5 , inset 0.53rem 0.53rem 0.53rem #cbced1;
+  border: transparent solid 0.13rem;
+  font-size: 1.33rem;
+  transition: all 0.3s ease;
+}
+
+.form-bloques .form-input:focus{
+  outline: 0.2rem solid #DD1111;
+}
+
+.form-bloques textarea.form-input{
+  height: 10rem;
+  resize: none; /*Para que no se pueda redimensionar el textarea*/
+}
+
+::-webkit-input-placeholder{
+  color: #2C2C2C;
+  font-style: bold;
+}
+
+.columna-info-contacto{
+  font-style: italic;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-10%);
+}
+
+.columna-info-contacto h2,
+.columna-info-contacto .telefono,
+.columna-info-contacto .email{
+  display: inline-block;
+  color: #871212;
+  font-size: 1.8rem;
+  text-decoration: none;
+  margin: 1rem 0 0 3rem;
+}
+
+
 
 /*Tipos de posiciones
   static: Por defecto
@@ -698,6 +752,7 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
   object-position: center; /*Para que la imagen se centre*/
 }
 
+#banner.banner-contacto,
 #banner.banner-nosotros{
   height: 60vh;
 }
@@ -1018,8 +1073,40 @@ Azul Marino #2C3E50
     padding: 1rem 0; ;
   }
 
+  #banner.banner-home,
+  #banner.banner-contacto,
   #banner.banner-nosotros{
     height: 100vh;
+  }
+
+  #banner.banner-contacto h1{
+    font-size: 2.5rem;
+  }
+
+  .columna-info-contacto.derecha-texto{
+    text-align: left;
+  }
+
+  .columna-info-contacto p{
+    text-align: justify;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .columna-info-contacto h2,
+  .columna-info-contacto .telefono,
+  .columna-info-contacto .email{
+    margin: 1rem 0 0 0 ;
+    font-size: 1.3rem;
+  }
+
+  .form-bloques.form-bloque-boton .btn{
+    width: 100%;
+  }
+
+  .columna-mb-100.columna-form{
+    order: 2;
+    padding-bottom: 0;
   }
 }
 
