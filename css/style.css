@@ -194,6 +194,11 @@ footer .pie.nosotros{
   padding-bottom: 4rem;
 }
 
+.seccion.seccion-contacto{
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
 .centrar-texto{
   text-align: center; /*Para centrar el texto*/
 }
@@ -1043,6 +1048,11 @@ Azul Marino #2C3E50
     padding-bottom: 2.8rem;
   }
 
+  .seccion.seccion-contacto{
+    padding-top: 2.8rem;
+    padding-bottom: 1rem;
+  }
+
   .contenedor-cuadrado .contenido-cuadrado{
     top: 50%;
     transform: translateY(-50%);
@@ -1107,6 +1117,10 @@ Azul Marino #2C3E50
   .columna-mb-100.columna-form{
     order: 2;
     padding-bottom: 0;
+  }
+
+  #cocineros:hover::before{
+    transform: scaleX(5);
   }
 }
 
