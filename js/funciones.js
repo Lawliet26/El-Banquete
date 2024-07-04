@@ -41,3 +41,29 @@ let objeto = {
 }
 
 console.log(objeto);
+
+//-----------------Cadenas de texto-----------------
+
+let cadena = "Hola,mundo";
+console.log(cadena.length); //Longitud de la cadena
+console.log(cadena.charAt(6)); //Caracter en la posicion 6
+console.log(cadena.charAt(cadena.length-1)); //Ultimo caracter de una cadena de la que no conoces el tamaño
+console.log(cadena.indexOf("un")); //Posicion de la primera ocurrencia de la cadena
+//Si no encuentra la cadena devuelve -1
+console.log(cadena.lastIndexOf("o")); //Posicion de la ultima ocurrencia de la cadena
+//Si no encuentra la cadena devuelve -1
+console.log(cadena.replace("mundo","amigos")); //Reemplaza la primera ocurrencia de la cadena
+console.log(cadena.search("mundo")); //Busca la cadena y devuelve la posicion
+console.log(cadena.split(",")); //Divide la cadena en un array
+console.log(cadena.substring(0,4)); //Extrae los caracteres desde la posicion 0 hasta la 4
+console.log(cadena.toLowerCase(cadena)); //Convierte la cadena a minusculas
+console.log(cadena.toUpperCase(cadena)); //Convierte la cadena a mayusculas
+console.log(cadena.concat(" ","Luisa"," ","Fernanda")); //Concatena cadenas
+
+cadena = cadena + " Luisa" + " Fernanda";
+console.log(cadena); 
+
+numero1 = numero1.toString(); //Convierte un numero a cadena
+console.log(numero1);
+
+console.log(numero1 + " Meses minimos"); //Concatenacion de cadena con numero
