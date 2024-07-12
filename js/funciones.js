@@ -198,3 +198,69 @@ let nombre = "luisa";
 for (let i = 0; i < nombre.length ; i++){
     console.log(nombre.charAt(i));
 }
+
+//-------------------Eventos-------------------
+
+//Forma clasica de asignar eventos
+/*
+
+let cocinero1 = document.getElementById("cocinero1");
+
+alert(cocinero1.innerHTML);
+
+cocinero1.innerHTML = "Mateo Zapata"; //Cambia el contenido del elemento
+cocinero1.id = "cocinero2"; //Cambia el id del elemento
+cocinero1.className = "restaurante turnos"; //Cambia la clase del elemento
+
+//Forma de selccionar por etiqueta
+
+let titulos = document.getElementsByTagName("h2")
+
+for (let i = 0; i < titulos.length; i++){
+    titulos[i].id = "cocinero"+(i+1);
+}
+
+
+
+//Forma de seleccionar por clase
+
+let columnas = document.getElementsByClassName("columna");
+
+console.log(columnas);
+
+for (let i = 0; i < columnas.length; i++){
+    columnas[i].id = "columna"+(i);
+}
+
+
+//Forma de seleccionar por estructura de etiquetas
+
+let enlaces = document.querySelectorAll("header nav a");
+
+console.log(enlaces);
+
+for (let i = 0; i < enlaces.length; i++){
+    enlaces[i].id = "enlace"+(i);
+}
+
+// Forma de seleccionar solo el primer elemento que cumpla con la condicion
+let enlace = document.querySelector("header nav a"); //Selecciona el primer elemento que cumpla con la condicion
+
+enlace.className = "Enlace principal";
+
+*/
+
+//Forma de asignar eventos
+
+let cocinero1 = document.getElementById("cocinero1");
+
+/*
+cocinero1.onclick = function(){
+    alert("Soy el cocinero Mateo");
+}
+
+//Forma de asignar eventos con addEventListener
+cocinero1.addEventListener("click",function(){
+    alert("Soy el cocinero Andres");
+});
+*/
