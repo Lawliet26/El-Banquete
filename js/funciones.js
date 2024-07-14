@@ -9,6 +9,8 @@ let acciones = {
         //$("#lacarta .contenedor-cuadrado").find("img").eq(0).click(acciones.obtenersrc);
 
         $("#lacarta .contenedor-cuadrado").click(acciones.obtenersrc);
+
+        $(".btn-enviar").click(acciones.enviar);
     },
 
     clickBotonRojo: function(e){
@@ -45,9 +47,29 @@ let acciones = {
     },
 
     obtenersrc: function(){
-        let src = $(this).find("img").attr("src"); //obtiene el atributo src de la imagen
-        console.log(src);
-    }
+        //let src = $(this).find("img").attr("src"); //obtiene el atributo src de la imagen
+        //let src = $(this).find("img").attr("src","img/img10.jpg"); //cambia el atributo src de la imagen
+        //console.log(src);
+
+        //let html = $(this).html(); //obtiene el contenido html
+        //$(this).html("<p>Estes es un nuevo contenido</p>"); //cambia el contenido html
+        //console.log(html);
+
+        //let texto = $(this).find("h2").text(); //obtiene el texto del h2
+        //console.log(texto);
+        //$(this).find("h2").text("Prueba de seteo"); //cambia el texto del h2
+        
+    },
+
+    enviar: function(){
+        //let nombre = $("#nombre").val();
+        //let email = $("#email").val();
+        //let asunto = $("#asunto").val();
+        //let mensaje = $("#mensaje").val();
+        //console.log(nombre+"-"+email+"-"+asunto+"-"+mensaje);
+
+        //$("#nombre").val("Funciona la prueba");
+    },
 };
 
 $(document).ready(acciones.listo);

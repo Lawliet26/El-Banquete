@@ -52,21 +52,21 @@
                         <a href="mailto:itachiuchiha26122001@gmail.com" class="telefono">itachiuchiha26122001@gmail.com</a>
                     </div>
                     <div class="columna columna-50 columna-mb-100 columna-form">
-                        <form id="frmcontacto" action="registro.php" method="post">
+                        <form onsubmit="return false" id="frmcontacto" action="registro.php" method="post">
                             <div class="form-bloques">
-                                <input class="form-input" type="text" placeholder="Nombre" name="nombre" required>
+                                <input id="nombre" class="form-input" type="text" placeholder="Nombre" name="nombre" required>
                             </div>
                             <div class="form-bloques">
-                                <input class="form-input" type="email" placeholder="Email" name="email" required>
+                                <input id="email" class="form-input" type="email" placeholder="Email" name="email" required>
                             </div>
                             <div class="form-bloques">
-                                <input class="form-input" type="text" placeholder="Asunto" name="asunto" required>
+                                <input id="asunto" class="form-input" type="text" placeholder="Asunto" name="asunto" required>
                             </div>
                             <div class="form-bloques">
-                                <textarea class="form-input" placeholder="Mensaje" name="mensaje"  required></textarea>
+                                <textarea id="mensaje" class="form-input" placeholder="Mensaje" name="mensaje"  required></textarea>
                             </div>
                             <div class="form-bloques form-bloque-boton">
-                                <input type="submit" value="ENVIAR" class="btn boton-rojo">
+                                <input type="submit" value="ENVIAR" class="btn boton-rojo btn-enviar">
                             </div>
                         </form>
                     </div>               
