@@ -47,6 +47,10 @@ body{
   font-size: 1rem;
 }
 
+body.abierto{
+  overflow: hidden;
+}
+
 a{
   display: inline-block; /*Para que el enlace se comporte como un bloque*/
 }
@@ -220,13 +224,17 @@ footer .pie.nosotros{
 }
 
 .cabecera{
-  backdrop-filter: blur(0.66rem); /*Para que el fondo se vea borroso*/
   padding: 1rem 0;
   position: fixed;
   top: 0rem;
   left: 0rem;
   width: 100%;
   z-index: 999;
+  transition: all 0.5s ease;
+}
+
+.cabecera.fondo{
+  backdrop-filter: blur(0.66rem); /*Para que el fondo se vea borroso*/
 }
 
 .cabecera .link-logo{
@@ -243,6 +251,11 @@ footer .pie.nosotros{
 .cabecera .link-logo .logo{
   width: 5.3rem;
   height: auto;
+  transition: all 0.4s ease;
+}
+
+.cabecera.fondo .link-logo .logo{
+  width: 3.3rem;
 }
 
 .sin-padding{
@@ -885,12 +898,12 @@ Azul Marino #2C3E50
 @media(min-width: 1200px){
 
 }
+
 @media(max-width: 1199px){
   .container{ 
     width: 960px;
   }
 }
-
 
 @media(max-width: 991px){
 
@@ -904,7 +917,29 @@ Azul Marino #2C3E50
 
   .cabecera .hamb{
     display: block;
+    font-size: 4rem;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cabecera.fondo .hamb{
+    font-size: 3.5rem;
+  }
+
+  .cabecera .link-logo .logo{
+    width: 6rem;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cabecera.fondo{
+    backdrop-filter: blur(0.66rem);
+  }
+
+  .cabecera.fondo .link-logo .logo{
+    width: 5rem;
   }
 
   .cabecera .hamb:hover{
@@ -913,24 +948,36 @@ Azul Marino #2C3E50
   }
 
   .cabecera .menu{
+    padding-right: 1rem;
+    padding-left: 1rem;
     position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #FFF8E1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    display: none; 
+    display: flex; 
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  .cabecera .menu a{
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+  .cabecera .menu.abierto{
+    transform: translateX(0%);
   }
 
   .btn.boton-transparente{
   font-size: 1.8rem;
   }
 }
-
 
 @media(max-width: 767px){
 
@@ -1011,7 +1058,18 @@ Azul Marino #2C3E50
 
   .cabecera .hamb{
     display: block;
+    font-size: 3rem;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cabecera.fondo .hamb{
+    font-size: 2.5rem;
+  }
+
+  .cabecera.fondo{
+    backdrop-filter: blur(0.66rem); /*Para que el fondo se vea borroso*/
   }
 
   .cabecera .hamb:hover{
@@ -1020,22 +1078,42 @@ Azul Marino #2C3E50
   }
 
   .cabecera .menu{
+    padding-right: 1rem;
+    padding-left: 1rem;
     position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #FFF8E1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    display: none; 
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+  }
+
+  .cabecera .menu.abierto{
+    transform: translateX(0%);
+  }
+
+  .cabecera .menu a{
+    margin: 1rem 0;
+    font-size: 2rem;
+
+  }
+  .cabecera.fondo .link-logo .logo {
+    width: 3rem;
   }
 
   .cabecera .link-logo .logo{
-    width: 3rem;
+    width: 3.5rem;
     height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
   }
 
   .contenedor-serv{

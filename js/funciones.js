@@ -11,6 +11,24 @@ let acciones = {
         $("#lacarta .contenedor-cuadrado").click(acciones.obtenersrc);
 
         $(".btn-enviar").click(acciones.enviar);
+
+        $(".cabecera .hamb").click(acciones.abrirmenu);
+    },
+
+    abrirmenu: function(e){
+        e.preventDefault();
+        //$(".cabecera .menu").addClass("abierto"); //agrega la clase abierto
+        //$(".cabecera .menu").removeClass("abierto"); //quita la clase abierto
+        $(".cabecera .menu").toggleClass("abierto"); //agrega o quita la clase abierto
+        $("body").toggleClass("abierto"); //agrega o quita la clase abierto
+        $(this).find("i").toggleClass("fa-xmark") //agrega o quita la clase fa-x
+
+        /*
+        if($(".cabecera .menu").hasClass("abierto")){
+            $(".cabecera .menu").removeClass("abierto");
+        }else{
+            $(".cabecera .menu").addClass("abierto");
+        }*/
     },
 
     clickBotonRojo: function(e){
@@ -23,7 +41,7 @@ let acciones = {
     },
 
     redimencionar: function(){
-        //ancho_pantalla= $(window).width();
+        ancho_pantalla= $(window).width();
         //alto_pantalla= $(window).height();
         //console.log("Ancho: "+ancho_pantalla, "Alto:"+alto_pantalla);
 
@@ -34,10 +52,22 @@ let acciones = {
 
         //$(".cabecera").height("200");
         //console.log("Alto menu: "+alto_menu);
+
+        if(ancho_pantalla < 768){
+            alto_menu = $(".cabecera").innerHeight();
+            $(".cabecera .menu").css({"padding-top":alto_menu,"padding-bottom":alto_menu});
+        }else{
+            $(".cabecera .menu").css({"padding-top":0,"padding-bottom":0});
+        }
     },
 
     scrollventana: function(){
 
+        if($(window).scrollTop() > alto_menu){
+            $(".cabecera").addClass("fondo");
+        }else{
+            $(".cabecera").removeClass("fondo");
+        }
     },
 
     irancla: function(e){
@@ -62,6 +92,8 @@ let acciones = {
     },
 
     enviar: function(){
+
+        //$("#contacto").css({"background-color":"#ff0000","color":"#ffffff"}); //Modifica el css de un elemento
         //let nombre = $("#nombre").val();
         //let email = $("#email").val();
         //let asunto = $("#asunto").val();
