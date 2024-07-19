@@ -8,11 +8,13 @@ let acciones = {
 
         //$("#lacarta .contenedor-cuadrado").find("img").eq(0).click(acciones.obtenersrc);
 
-        $("#lacarta .contenedor-cuadrado").click(acciones.obtenersrc);
+        //$("#lacarta .contenedor-cuadrado").click(acciones.obtenersrc);
 
         $(".btn-enviar").click(acciones.enviar);
 
         $(".cabecera .hamb").click(acciones.abrirmenu);
+
+        $(".cerrarimagen").click(acciones.cerrarimagen);
     },
 
     abrirmenu: function(e){
@@ -33,7 +35,24 @@ let acciones = {
 
     clickBotonRojo: function(e){
         e.preventDefault();
-        alert("Prueba de click en botón rojo");
+        let src = $(this).closest(".contenedor-cuadrado").find("img").attr("src");
+        $(".cuerpoimagen").find("img").attr("src",src);
+        
+        $(".trama").fadeIn("slow",function(){
+            $(".cuerpoimagen").fadeIn("fast");
+        });
+
+        //$(".trama").toggleFade("slow",function(){
+        //});
+
+    },
+
+    cerrarimagen: function(e){
+        e.preventDefault();
+        $(".cuerpoimagen").fadeOut("slow",function(){
+            $(".cuerpoimagen").find("img").attr("src","");
+            $(".trama").fadeOut("fast");
+        });
     },
 
     precarga: function(){
@@ -72,7 +91,7 @@ let acciones = {
 
     irancla: function(e){
         e.preventDefault();
-        let ancla = this.hash;
+        let ancla = this.hash; 
         //alert(ancla);
     },
 
