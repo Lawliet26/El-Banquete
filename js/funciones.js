@@ -15,6 +15,33 @@ let acciones = {
         $(".cabecera .hamb").click(acciones.abrirmenu);
 
         $(".cerrarimagen").click(acciones.cerrarimagen);
+
+        $(".titulo-acordeon").click(acciones.acordeon);
+
+        $(".flecha").click(acciones.irflecha);
+    },
+
+    irflecha: function(){
+        let posicion = $(this).closest("section").next("section").offset().top;
+        $("html,body").animate({
+            "scrollTop":posicion
+        },800);
+    },
+
+    acordeon: function(){
+        $(".cuerpo-acordeon").stop().slideUp("slow");
+        $(this).next(".cuerpo-acordeon").stop().slideToggle("slow");
+        $(".titulo-acordeon").toggleClass("girar");
+        $(".titulo-acordeon").not(this).removeClass("girar");
+        
+        /*
+        if($(this).hasClass("girar")){
+            $(this).removeClass("girar");
+        }else{
+            $(".titulo-acordeon").removeClass("girar");
+            $(this).addClass("girar");
+        };
+        */
     },
 
     abrirmenu: function(e){
@@ -56,6 +83,14 @@ let acciones = {
     },
 
     precarga: function(){
+
+        setTimeout(function(){
+            let ancla = window.location.hash;
+            if($(ancla).length > 0){
+                acciones.detalleancla(ancla);
+            }
+        },1000);
+
         acciones.redimencionar();
     },
 
@@ -91,8 +126,20 @@ let acciones = {
 
     irancla: function(e){
         e.preventDefault();
-        let ancla = this.hash; 
-        //alert(ancla);
+        let ancla = this.hash;
+        let url = $(this).attr("href"); 
+        
+        if($(ancla).length > 0){
+            acciones.detalleancla(ancla);
+        }else{
+            window.location.href = url;
+        };
+    },
+
+    detalleancla : function(ancla){
+        $("html, body").animate({
+            "scrollTop": $(ancla).offset().top
+        },800);
     },
 
     obtenersrc: function(){
@@ -123,10 +170,11 @@ let acciones = {
     },
 };
 
-$(document).ready(acciones.listo);
-
 $(window).on("load",acciones.precarga);
 
 $(window).resize(acciones.redimencionar);
 
 $(window).scroll(acciones.scrollventana);
+
+$(document).ready(acciones.listo);
+
