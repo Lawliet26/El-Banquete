@@ -716,6 +716,9 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
   margin: 1rem 0 0 3rem;
 }
 
+.error{
+  color: red;
+}
 
 
 /*Tipos de posiciones
@@ -878,6 +881,10 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
 
 #cocineros:hover::before{
   transform: scaleX(9);
+}
+
+#respuesta{
+  font-size: 1.5rem;
 }
 /* Paleta de colores
 Color Principal: 
@@ -1307,6 +1314,10 @@ Azul Marino #2C3E50
 
   .form-bloques.form-bloque-boton .btn{
     width: 100%;
+  }
+
+  .form-bloques.form-bloque-rpta{
+    margin-top: 1rem;
   }
 
   .columna-mb-100.columna-form{

@@ -21,6 +21,15 @@ let acciones = {
         $(".flecha").click(acciones.irflecha);
     },
 
+    cerrrarmenu: function(){
+
+        $(".cabecera .menu").removeClass("abierto"); //agrega o quita la clase abierto
+        $("body").removeClass("abierto"); //agrega o quita la clase abierto
+        $(".cabecera .hamb").find("i").removeClass("fa-xmark") //agrega o quita la clase fa-x
+
+
+    },
+
     irflecha: function(){
         let posicion = $(this).closest("section").next("section").offset().top;
         $("html,body").animate({
@@ -96,6 +105,7 @@ let acciones = {
 
     redimencionar: function(){
         ancho_pantalla= $(window).width();
+        acciones.cerrrarmenu();
         //alto_pantalla= $(window).height();
         //console.log("Ancho: "+ancho_pantalla, "Alto:"+alto_pantalla);
 
@@ -131,6 +141,7 @@ let acciones = {
         
         if($(ancla).length > 0){
             acciones.detalleancla(ancla);
+            acciones.cerrrarmenu();
         }else{
             window.location.href = url;
         };
@@ -160,13 +171,46 @@ let acciones = {
     enviar: function(){
 
         //$("#contacto").css({"background-color":"#ff0000","color":"#ffffff"}); //Modifica el css de un elemento
-        //let nombre = $("#nombre").val();
-        //let email = $("#email").val();
-        //let asunto = $("#asunto").val();
-        //let mensaje = $("#mensaje").val();
+        let nombre = $("#nombre").val();
+        let email = $("#email").val();
+        let asunto = $("#asunto").val();
+        let mensaje = $("#mensaje").val();
         //console.log(nombre+"-"+email+"-"+asunto+"-"+mensaje);
 
         //$("#nombre").val("Funciona la prueba");
+
+        $.ajax({
+            method: "POST",
+            url: "registro.php",
+            data:{
+                "nombre": nombre,
+                "email" : email,
+                "asunto": asunto,
+                "mensaje": mensaje
+            },
+            dataType: "json"
+        }).done(function(data){
+            /*
+            if(data.tipo == 1){
+                $("#respuesta").css({"color":"green"}).html(data.mensaje);
+            }else{
+                $("#respuesta").css({"color":"red"}).html(data.mensaje);
+            }
+            */
+            $(".error").remove();
+            if(data.tipo == 1){
+                $("#respuesta").css({"color":"green"}).html(data.mensaje);
+            }else{
+                $.each(data.errores,function(indice,elemento){
+                    let html = "<span class='error'>"+elemento.mensaje+"</span>";
+                    $("#"+elemento.id).closest(".form-bloques").append(html);
+                })
+            }
+
+        }).fail(function(error){
+            $("#respuesta").css({"color":"red"}).html(error.responseText);
+        })
+
     },
 };
 
