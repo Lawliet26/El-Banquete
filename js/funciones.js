@@ -6,6 +6,8 @@ let acciones = {
     listo: function(){
         $("#lacarta .boton-rojo").click(acciones.clickBotonRojo);
 
+        $(".btn-circulo.borde-blanco").click(acciones.botonCirculo);
+
         $(".cabecera .menu a[href*='#']").click(acciones.irancla);
 
         //$("#lacarta .contenedor-cuadrado").find("img").eq(0).click(acciones.obtenersrc);
@@ -153,7 +155,16 @@ let acciones = {
 
         //$(".trama").toggleFade("slow",function(){
         //});
+    },
 
+    botonCirculo: function(e){
+        e.preventDefault();
+        let src = $(this).closest(".contenedor-cuadrado").find("img").attr("src");
+        $(".cuerpoimagen").find("img").attr("src",src);
+        
+        $(".trama").fadeIn("slow",function(){
+            $(".cuerpoimagen").fadeIn("fast");
+        });
     },
 
     cerrarimagen: function(e){
