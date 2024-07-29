@@ -58,14 +58,14 @@ $respuesta = array();
 if(!isset($nombre) or empty($nombre)){
     array_push($listaerrores, array(
         "id" => "nombre",
-        "mensaje" => "Ingrese el nombre"
+        "mensaje" => "Por favor ingresa tu nombre"
     ));
 }
 
 if(!isset($email) or empty($email)){
     array_push($listaerrores, array(
         "id" => "email",
-        "mensaje" => "Ingrese el correo"
+        "mensaje" => "Por favor ingresa tu nombre"
     ));
 }
 
@@ -73,14 +73,14 @@ if(!isset($email) or empty($email)){
 if(!isset($asunto) or empty($asunto)){
     array_push($listaerrores, array(
         "id" => "asunto",
-        "mensaje" => "Ingrese el asunto"
+        "mensaje" => "Por favor ingrese el asunto"
     ));
 }
 
 if(!isset($mensaje) or empty($mensaje)){
     array_push($listaerrores, array(
         "id" => "mensaje",
-        "mensaje" => "Ingrese el mensaje"
+        "mensaje" =>  "Por favor ingrese el mensaje"
     ));
 }
 

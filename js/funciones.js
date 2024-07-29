@@ -1,5 +1,7 @@
 let ancho_pantalla, alto_pantalla, alto_menu;
 
+new WOW().init();
+
 let acciones = {
     listo: function(){
         $("#lacarta .boton-rojo").click(acciones.clickBotonRojo);
@@ -19,6 +21,77 @@ let acciones = {
         $(".titulo-acordeon").click(acciones.acordeon);
 
         $(".flecha").click(acciones.irflecha);
+
+        $(".owl-carousel").owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                768:{
+                    items:1
+                },
+                1200:{
+                    items:1
+                }
+            }
+        });
+
+        $("#frmcontacto").validate({
+			rules: {
+				nombre: "required",
+				email: {
+					required: true,
+					email: true
+				},
+				asunto: {
+					required: true,
+				},
+				mensaje: "required"
+			},
+			messages: {
+				nombre: "Por favor ingresa tu nombre",
+				email: {
+                    required: "Por favor ingresa tu nombre",
+                    email: "Por favor ingrese un correo valido",
+                },
+				asunto: "Por favor ingrese el asunto",
+				mensaje: "Por favor ingrese el mensaje",
+			},
+
+            submitHandler: function(form) {
+            let nombre = $("#nombre").val();
+            let email = $("#email").val();
+            let asunto = $("#asunto").val();
+            let mensaje = $("#mensaje").val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "registro.php",
+                    data:$("#frmcontacto").serialize(),
+                    dataType: "json"
+                }).done(function(data){
+
+                    $("#respuesta").html("");
+                    $("label.error").remove();
+                    $(".form-input.error").removeClass("error");
+                    if(data.tipo == 1){
+                        $("#respuesta").css({"color":"green"}).html(data.mensaje);
+                    }else{
+                        $.each(data.errores,function(indice,elemento){
+                            let html = "<label id='error-"+elemento.id+"' class='error'>"+elemento.mensaje+"</label>";
+                            $("#"+elemento.id).addClass("error");
+                            $("#"+elemento.id).closest(".form-bloques").append(html);
+                        })
+                    }
+
+                }).fail(function(error){
+                    $("#respuesta").css({"color":"red"}).html(error.responseText);
+                })
+            }
+		});
     },
 
     cerrrarmenu: function(){
@@ -92,6 +165,11 @@ let acciones = {
     },
 
     precarga: function(){
+
+        $(".trama-2").fadeOut("slow")
+        $(".logo-load, .logo-load2").fadeOut("slow",function(){
+            $("body").removeClass("abierto");
+        })
 
         setTimeout(function(){
             let ancla = window.location.hash;
@@ -169,6 +247,7 @@ let acciones = {
     },
 
     enviar: function(){
+        /*
 
         //$("#contacto").css({"background-color":"#ff0000","color":"#ffffff"}); //Modifica el css de un elemento
         let nombre = $("#nombre").val();
@@ -190,19 +269,22 @@ let acciones = {
             },
             dataType: "json"
         }).done(function(data){
-            /*
-            if(data.tipo == 1){
-                $("#respuesta").css({"color":"green"}).html(data.mensaje);
-            }else{
-                $("#respuesta").css({"color":"red"}).html(data.mensaje);
-            }
-            */
+            
+            //if(data.tipo == 1){
+            //    $("#respuesta").css({"color":"green"}).html(data.mensaje);
+            //}else{
+            //    $("#respuesta").css({"color":"red"}).html(data.mensaje);
+            //}
+            
+            $("#respuesta").html("");
             $(".error").remove();
+            $(".error-input").removeClass("error-input");
             if(data.tipo == 1){
                 $("#respuesta").css({"color":"green"}).html(data.mensaje);
             }else{
                 $.each(data.errores,function(indice,elemento){
                     let html = "<span class='error'>"+elemento.mensaje+"</span>";
+                    $("#"+elemento.id).addClass("error-input");
                     $("#"+elemento.id).closest(".form-bloques").append(html);
                 })
             }
@@ -210,6 +292,8 @@ let acciones = {
         }).fail(function(error){
             $("#respuesta").css({"color":"red"}).html(error.responseText);
         })
+
+        */
 
     },
 };

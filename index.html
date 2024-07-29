@@ -11,12 +11,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="img/logo-removebg-preview.png">
+        <link rel="stylesheet" href="libs/wow/animate.css">
+        <link rel="stylesheet" href="libs/owl/owl.carousel.css">
+        <link rel="stylesheet" href="libs/owl/owl.theme.default.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/eed779b4d1.js" crossorigin="anonymous"></script>
         <script src="js/jquery.js"></script>
+        <script src="libs/wow/wow.js"></script>
+        <script src="libs/owl/owl.carousel.js"></script>
+        <script src="libs/jquery-validate/jquery.validate.js"></script>
     </head>
-    <body>
+    <body class="abierto">
         <header class="cabecera">
             <div class="container">
                 <a href="index.html" class="link-logo">
@@ -41,10 +47,10 @@
                 <div class="container">
                     <div class="fila">
                         <div class="columna columna-50 columna-mb-100">
-                            <h1>Lee nuestra carta</h1>
-                            <p>Tenemos los mejores platos de la temporada, cada plato tiene
+                            <h1 class="wow slideInLeft" data-wow-duration="1.5s" >Lee nuestra carta</h1>
+                            <p class="wow slideInLeft" data-wow-duration="1.5s" >Tenemos los mejores platos de la temporada, cada plato tiene
                                 un sabor único y especial que solo en El Banquete podrás disfrutar.</p>
-                            <a href="#lacarta" class="btn boton-transparente">Ver Carta</a>
+                            <a href="#lacarta" class="btn boton-transparente wow slideInLeft" data-wow-duration="2s">Ver Carta</a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +60,7 @@
                 <div class="container">
                     <div class="fila">
                         <div class="columna columna-100">
-                            <h1 class="titulos">La Carta</h1>
+                            <h1 class="titulos wow slideInLeft" data-wow-duration="1.5s">La Carta</h1>
                         </div>
                     </div>
                     <div class="fila columna">
@@ -114,7 +120,7 @@
                 <div class="container-full">
                     <div class="fila fila-centrada">
                         <div class="columna columna-60 columna-mb-100">
-                            <h2 class="titulos">Locales</h2>
+                            <h2 class="titulos wow slideInLeft" data-wow-duration="1.5s">Locales</h2>
                             <p class="centrar-texto">Descubre nuestros exclusivos locales donde podrás disfrutar 
                                 de las deliciosas comidas de El Banquete. Cada uno de nuestros 
                                 locales está diseñado para brindarte una experiencia única y especial.
@@ -177,7 +183,7 @@
                 <div class="container">
                     <div class="fila fila-centrada">
                         <div class="columna columna-60 columna-mb-100">
-                            <h2 class="titulos">Servicios</h2>
+                            <h2 class="titulos wow slideInLeft" data-wow-duration="2s">Servicios</h2>
 
                         </div>
                     </div>
@@ -219,18 +225,25 @@
                 <div class="container">
                     <div class="fila fila-centrada">
                         <div class="columna columna-60 columna-mb-100">
-                            <h2 class="titulos">Momentos</h2>
-                            <p class="centrar-texto inclinar-texto">
-                                En nuestra sección de momentos de Clientes, 
-                                nos complace compartir las historias y testimonios 
-                                de nuestros valiosos clientes. Aquí, podrá descubrir 
-                                cómo nuestros visitantes han disfrutado de nuestras 
-                                deliciosas comidas, nuestro ambiente acogedor y 
-                                nuestros servicios excepcionales. Estas momentos 
-                                reflejan nuestro compromiso con la excelencia y nuestra 
-                                pasión por crear momentos memorables para cada cliente 
-                                que pasa por nuestras puertas. 
-                            </p>
+                            <h2 class="titulos wow slideInLeft" data-wow-duration="1.5s">Momentos</h2>
+                        </div>
+                    </div>
+                    <div class="fila fila-centrada">
+                        <div class="columna columna-60 columna-mb-100">
+                            <div class="owl-carousel owl-theme wow slideInRight" data-wow-duration="1.5s">
+                                <div class="item">
+                                   <h3 class="centrar-texto">Una Propuesta Inolvidable</h3>
+                                   <p>En una noche cálida de verano, Juan decidió que era el momento perfecto para proponerle matrimonio a Ana. Reservó una mesa en nuestro restaurante, conocido por su ambiente romántico y acogedor. Con la ayuda de nuestro personal, organizó una sorpresa inolvidable. Al final de la cena, el camarero trajo un postre especial con un anillo escondido en su interior. Cuando Ana lo descubrió, Juan se arrodilló y le pidió que fuera su esposa. Ella dijo que sí, y el restaurante entero estalló en aplausos. Fue una noche mágica que ambos recordarán para siempre.</p> 
+                                </div>
+                                <div class="item">
+                                    <h3 class="centrar-texto">El Cumpleaños de Abuela</h3>
+                                    <p>María quería celebrar el cumpleaños número 80 de su abuela en un lugar especial. Eligió nuestro restaurante por su ambiente familiar y su deliciosa comida. Invitó a toda la familia y organizó una cena sorpresa. Cuando la abuela llegó, se emocionó al ver a todos sus seres queridos reunidos. La noche estuvo llena de risas, historias y recuerdos compartidos. Al final, el personal del restaurante trajo un pastel de cumpleaños y todos cantaron "Feliz Cumpleaños". La abuela dijo que fue uno de los mejores días de su vida.</p>  
+                                </div>
+                                <div class="item">
+                                    <h3 class="centrar-texto">La Primera Cena de los Recién Casados</h3>
+                                    <p>Después de una hermosa ceremonia de boda, Laura y Pedro eligieron nuestro restaurante para su primera cena como marido y mujer. Querían un lugar íntimo y especial para celebrar su unión. El personal del restaurante decoró su mesa con flores y velas, creando un ambiente romántico. La pareja disfrutó de una cena exquisita, brindando por su futuro juntos. Al final de la noche, el chef les sorprendió con un postre especial para celebrar su matrimonio. Fue una velada perfecta que marcó el comienzo de su vida juntos.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,6 +283,9 @@
                 </div>
             </div>
         </footer>
+        <div class="trama-2"></div>
+        <div class="logo-load"><img src="img/logoload1.svg"></div>
+        <div class="logo-load2"><img src="img/logoload2.svg"></div>
         <div class="trama"></div>
         <div class="cuerpoimagen">
             <img src="">

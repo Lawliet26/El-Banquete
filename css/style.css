@@ -716,9 +716,20 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
   margin: 1rem 0 0 3rem;
 }
 
-.error{
+.error,.form-bloques .form-input.erro{
   color: red;
 }
+
+.form-bloques .form-input.error{
+  border-color: rgba(231, 19, 19, 0.7);
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+  background-color: #f0ca02;
+}
+
+
+
 
 
 /*Tipos de posiciones
@@ -858,6 +869,16 @@ href^="#": Selecciona los elementos que tengan un enlace que comience con #
   line-height: 1.5;
 }
 
+#momentos .item p{
+  text-align: justify;
+}
+
+#momentos h3{
+  color: #f0ca02;
+  font-size: 1.5rem;
+  font-style: bold;
+}
+
 #momentos .container p::first-letter{
   font-size: 2rem;
 }
@@ -915,6 +936,57 @@ Azul Marino #2C3E50
   top: 0;
   left: 0;
   display:none;
+  z-index: 999;
+}
+
+.trama-2{
+  background-image: url("../img/tramap.png");
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:block;
+  z-index: 999;
+}
+
+.logo-load{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+}
+
+.logo-load img{
+  width: 6rem;
+  height: 6rem;
+  display: inline-block;
+  transform-origin: 20%,10%;
+  animation-name: rotar;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotar{
+  0%{transform: rotate(-15deg);}
+  50%{transform: rotate(42deg);}
+  100%{transform: rotate(-15deg);}
+}
+
+.logo-load2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-13%);
+  z-index: 999;
+}
+
+.logo-load2 img{
+  width: 6rem;
+  height: 6rem;
+  display: inline-block;
   z-index: 999;
 }
 

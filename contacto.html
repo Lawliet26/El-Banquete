@@ -8,12 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logo-removebg-preview.png">
+    <link rel="stylesheet" href="libs/wow/animate.css">
+    <link rel="stylesheet" href="libs/owl/owl.carousel.css">
+    <link rel="stylesheet" href="libs/owl/owl.theme.default.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/eed779b4d1.js" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
+    <script src="libs/wow/wow.js"></script>
+    <script src="libs/owl/owl.carousel.js"></script>
+    <script src="libs/jquery-validate/jquery.validate.js"></script>
 </head>
-<body class="body-contacto">
+<body class="body-contacto abierto">
     <header class="cabecera">
         <div class="container">
             <a href="index.html" class="link-logo">
@@ -23,7 +29,7 @@
             <a href="index.html#lacarta">La Carta</a>
             <a href="index.html#locales">Locales</a>
             <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html" class="seleccionado" target="_self">Contacto</a>
+            <a href="contacto.html">Contacto</a>
         </nav>
         <a href="#hamb" class="hamb" ><i class="fa-solid fa-bars"></i></a>
         </div>
@@ -52,7 +58,7 @@
                         <a href="mailto:itachiuchiha26122001@gmail.com" class="telefono">itachiuchiha26122001@gmail.com</a>
                     </div>
                     <div class="columna columna-50 columna-mb-100 columna-form">
-                        <form onsubmit="return false" id="frmcontacto" action="registro.php" method="post">
+                        <form id="frmcontacto" action="registro.php" method="post">
                             <div class="form-bloques">
                                 <input id="nombre" class="form-input" type="text" placeholder="Nombre" name="nombre" required>
                             </div>
@@ -97,6 +103,9 @@
             </div>
         </div>
     </footer>
+    <div class="trama-2"></div>
+    <div class="logo-load"><img src="img/logoload1.svg"></div>
+    <div class="logo-load2"><img src="img/logoload2.svg"></div>
     <script src="js/funciones.js"></script>
 </body>
 </html>
