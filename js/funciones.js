@@ -81,12 +81,14 @@ let acciones = {
                     $(".form-input.error").removeClass("error");
                     if(data.tipo == 1){
                         $("#respuesta").css({"color":"green"}).html(data.mensaje);
-                    }else{
+                    }else if(data.tipo ==2){
                         $.each(data.errores,function(indice,elemento){
                             let html = "<label id='error-"+elemento.id+"' class='error'>"+elemento.mensaje+"</label>";
                             $("#"+elemento.id).addClass("error");
                             $("#"+elemento.id).closest(".form-bloques").append(html);
                         })
+                    }else{
+                        alert(data.mensaje);
                     }
 
                 }).fail(function(error){

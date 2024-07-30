@@ -1087,6 +1087,10 @@ Azul Marino #2C3E50
   .container{ 
     width: 960px;
   }
+
+  .cabecera.fondo{
+    backdrop-filter: blur(1rem); /*Para que el fondo se vea borroso*/
+  }
 }
 
 @media(max-width: 991px){

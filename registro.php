@@ -1,9 +1,16 @@
 <?php
 
+require_once("config/database.php");
+date_default_timezone_set("America/Bogota");
+
+$database = new Database();
+$db = $database -> getConnection();
+
 $nombre = $_POST["nombre"];
 $email = $_POST["email"];
 $asunto = $_POST["asunto"];
 $mensaje = $_POST["mensaje"];
+$fecha = date("Y-m-d H:i:s");
 
 /*
 if(isset($nombre) and !empty($nombre)){
@@ -52,6 +59,13 @@ if(isset($nombre) and !empty($nombre)){
     }
 */
 
+function is_ajax(){
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) and strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+        return true;
+    }
+    return false;
+}
+
 $listaerrores = array();
 $respuesta = array();
 
@@ -84,13 +98,36 @@ if(!isset($mensaje) or empty($mensaje)){
     ));
 }
 
-if(count($listaerrores)>0){
-    $respuesta["tipo"] = 2;
-    $respuesta["errores"] = $listaerrores;
-}else{
-    $respuesta["tipo"] = 1;
-    $respuesta["mensaje"] = "Se registro correctamente";
-}
+if(is_ajax()){
+    if(count($listaerrores)>0){
+        $respuesta["tipo"] = 2;
+        $respuesta["errores"] = $listaerrores;
+    }else{
 
+        $declaracion = $db -> prepare("INSERT INTO tb_contacto(nombre, email, asunto, mensaje, fecha) VALUES(:nombre, :email, :asunto, :mensaje, :fecha)");
+
+        $declaracion -> bindParam(":nombre", $nombre, PDO::PARAM_STR);
+        $declaracion -> bindParam(":email", $email, PDO::PARAM_STR);
+        $declaracion -> bindParam(":asunto", $asunto, PDO::PARAM_STR);
+        $declaracion -> bindParam(":mensaje", $mensaje, PDO::PARAM_STR);
+        $declaracion -> bindParam(":fecha", $fecha, PDO::PARAM_STR);
+        $declaracion -> execute();
+
+        $ultimoid = $db -> lastInsertId();
+
+        if($ultimoid){
+            $respuesta["tipo"] = 1;
+            $respuesta["mensaje"] = "Se registro correctamente";
+        }else{
+            $respuesta["tipo"] = 3;
+            $respuesta["mensaje"] = "Ocurrio un problema al registrar";
+        }
+
+
+    }
+}else{
+    $respuesta["tipo"] = 3;
+    $respuesta["mensaje"] = "Ocurrio un problema en el servidor";
+}
 echo json_encode($respuesta);
 ?>
